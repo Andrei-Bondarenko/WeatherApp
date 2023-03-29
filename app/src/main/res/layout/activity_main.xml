@@ -4,65 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/clouds"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/City"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/cityEditText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/bishkek"
+        android:layout_margin="50dp"
         android:textColor="@color/black"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="@id/settings"
-        app:layout_constraintStart_toStartOf="@id/plus"
-        app:layout_constraintTop_toTopOf="@id/plus"
-        app:layout_constraintBottom_toBottomOf="@id/settings"/>
-
-    <TextView
-        android:id="@+id/temperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_10c"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
 
-        <TextView
-            android:id="@+id/Weather"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/weather"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/temperature"
-            app:layout_constraintStart_toStartOf="@id/temperature"
-            app:layout_constraintEnd_toEndOf="@id/temperature"/>
+        />
 
-    <Button
-        android:id="@+id/plus"
+    <TextView
+        android:id="@+id/tempTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Plus"
+        android:text=""
         android:textColor="@color/black"
-        android:backgroundTint="@color/white"
         android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/settings"
+    <TextView
+        android:id="@+id/weatherTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/settings"
+        android:text="@string/weather"
         android:textColor="@color/black"
-        android:backgroundTint="@color/white"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-
+        app:layout_constraintEnd_toEndOf="@id/tempTextView"
+        app:layout_constraintStart_toStartOf="@id/tempTextView"
+        app:layout_constraintTop_toBottomOf="@id/tempTextView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

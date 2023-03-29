@@ -1,4 +1,4 @@
-package com.example.weather
+package com.example.weather.api.model
 
 data class Sys(
     val type: Int,

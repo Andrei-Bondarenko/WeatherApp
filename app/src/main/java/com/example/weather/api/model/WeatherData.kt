@@ -1,10 +1,10 @@
-package com.example.weather
+package com.example.weather.api.model
 
 data class WeatherData(
     val coord: Coord,
     val weather: List<Weather>,
     val base: String,
-    val mainData: MainData,
+    val main: MainData,
     val visibility: Int,
     val wind: Wind,
     val clouds: Clouds,
