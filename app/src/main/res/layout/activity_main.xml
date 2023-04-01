@@ -12,12 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
+        android:text="@string/kara_balta"
         android:textColor="@color/black"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tempTextView"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:text=""
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="100sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:text="@string/weather"
         android:textColor="@color/black"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="@id/tempTextView"
         app:layout_constraintStart_toStartOf="@id/tempTextView"
         app:layout_constraintTop_toBottomOf="@id/tempTextView" />

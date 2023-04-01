@@ -7,10 +7,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainPresenter(private val api: WeatherApi): MainContract.Presenter {
-    private var view: MainContract.View? = null
+class MainPresenter(private val api: WeatherApi): Presenter {
+    private var view: ViewWeather? = null
 
-    override fun attach(view: MainContract.View) {
+    override fun attach(view: ViewWeather) {
         this.view = view
     }
 
