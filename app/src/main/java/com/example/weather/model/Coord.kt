@@ -1,3 +1,3 @@
-package com.example.weather.api.model
+package com.example.weather.model
 
 data class Coord(val lon: Double, val lat: Double)

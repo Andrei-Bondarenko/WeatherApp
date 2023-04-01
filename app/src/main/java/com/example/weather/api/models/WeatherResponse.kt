@@ -1,6 +1,6 @@
-package com.example.weather.api.model
+package com.example.weather.api.models
 
-data class Weather(
+data class WeatherResponse(
     val id: Int,
     val main: String,
     val description: String,

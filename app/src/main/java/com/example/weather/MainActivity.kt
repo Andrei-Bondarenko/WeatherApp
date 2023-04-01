@@ -9,16 +9,14 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.doAfterTextChanged
 import com.example.weather.api.Client
 import com.example.weather.api.WeatherApi
-import com.example.weather.api.model.WeatherData
+import com.example.weather.api.models.WeatherDataResponse
 import com.example.weather.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity(), ViewWeather {
     private val baseUrl = "https://api.openweathermap.org/"
 
-    private val binding: ActivityMainBinding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
-    }
+    private val binding: ActivityMainBinding
 
     private val api: WeatherApi = Client.getClient(baseUrl).create(WeatherApi::class.java)
     private lateinit var key: String
@@ -38,7 +36,7 @@ class MainActivity : AppCompatActivity(), ViewWeather {
         }
     }
 
-    override fun showData(data: WeatherData) {
+    override fun showData(data: WeatherDataResponse) {
         Log.d("______", "showData: $data")
         with(binding) {
             var gradusesC: Int = data.main.temp.toInt()

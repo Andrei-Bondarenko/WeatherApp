@@ -1,6 +1,6 @@
-package com.example.weather.api.model
+package com.example.weather.api.models
 
-data class MainData(
+data class MainDataResponse(
     val temp: Double,
     val feels_like: Double,
     val temp_min: Double,

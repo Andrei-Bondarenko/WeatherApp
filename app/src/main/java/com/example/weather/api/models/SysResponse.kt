@@ -1,6 +1,6 @@
-package com.example.weather.api.model
+package com.example.weather.api.models
 
-data class Sys(
+data class SysResponse(
     val type: Int,
     val id: Int,
     val country: String,
