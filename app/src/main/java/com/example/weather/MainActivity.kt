@@ -16,7 +16,9 @@ import com.example.weather.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(), ViewWeather {
     private val baseUrl = "https://api.openweathermap.org/"
 
-    private val binding: ActivityMainBinding
+    private val binding: ActivityMainBinding by lazy {
+        ActivityMainBinding.inflate(layoutInflater)
+    }
 
     private val api: WeatherApi = Client.getClient(baseUrl).create(WeatherApi::class.java)
     private lateinit var key: String
