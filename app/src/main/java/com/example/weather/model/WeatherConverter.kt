@@ -1,6 +1,6 @@
 package com.example.weather.model
 
-import com.example.weather.api.models.*
+import com.example.weather.api.model.*
 
 object WeatherConverter {
     fun fromNetwork(response: WeatherDataResponse): WeatherData {

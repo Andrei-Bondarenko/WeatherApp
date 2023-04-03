@@ -1,7 +1,7 @@
-package com.example.weather
+package com.example.weather.ui
 
 interface Presenter {
     fun getData(key: String, city: String)
-    fun attach(view: ViewWeather)
+    fun attach(view: View)
     fun detach()
 }

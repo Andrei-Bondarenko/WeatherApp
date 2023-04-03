@@ -1,4 +1,4 @@
-package com.example.weather.api.models
+package com.example.weather.api.model
 
 data class MainDataResponse(
     val temp: Double,
