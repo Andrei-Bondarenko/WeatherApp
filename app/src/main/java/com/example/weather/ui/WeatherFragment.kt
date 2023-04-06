@@ -5,20 +5,22 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.example.weather.R
 import com.example.weather.api.WeatherApi
+import com.example.weather.common.mvp.BaseMvpFragment
 import com.example.weather.databinding.WeatherFragmentBinding
 import com.example.weather.interactor.WeatherInteractor
 import com.example.weather.model.WeatherData
 import com.example.weather.repository.WeatherRemoteRepository
+import com.example.weather.start_page.ui.DefaultFragment
 import com.example.weather.utils.Client
+import com.example.weather.utils.replace
 
-class WeatherFragment : Fragment(), WeatherContract.View {
+class WeatherFragment :
+    BaseMvpFragment<WeatherContract.View, WeatherContract.Presenter>(R.layout.weather_fragment),
+    WeatherContract.View {
     private val baseUrl = "https://api.openweathermap.org/"
 
 
@@ -26,8 +28,7 @@ class WeatherFragment : Fragment(), WeatherContract.View {
     private lateinit var key: String
     private val remoteRepository = WeatherRemoteRepository(api)
     private val interactor = WeatherInteractor(remoteRepository)
-    private val presenter: WeatherPresenter = WeatherPresenter(interactor)
-    private val view: WeatherContract.View? = null
+    override val presenter: WeatherPresenter = WeatherPresenter(interactor)
 
     private lateinit var binding: WeatherFragmentBinding
 
@@ -56,7 +57,7 @@ class WeatherFragment : Fragment(), WeatherContract.View {
                 }
             }
             buttonBackToMyCity.setOnClickListener {
-                changeFragment(fragment = DefaultFragment(),R.id.mainFragmentContainer)
+                replace(fragment = DefaultFragment(), R.id.container)
             }
         }
     }
@@ -89,10 +90,6 @@ class WeatherFragment : Fragment(), WeatherContract.View {
         }
     }
 
-    override fun showError(t: Throwable) {
-        Toast.makeText(requireContext(), t.message, Toast.LENGTH_SHORT).show()
-    }
-
     override fun showLoading(isLoading: Boolean) {
         binding.progressBar.isVisible = isLoading
     }
@@ -107,14 +104,5 @@ class WeatherFragment : Fragment(), WeatherContract.View {
         binding.tempTextView.text = ""
         binding.progressBar.isVisible = true
     }
-
-    fun changeFragment(fragment: DefaultFragment, id: Int) {
-        val fragmentManager = requireActivity().supportFragmentManager
-        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.addToBackStack(null)
-            .replace(id, fragment)
-            .commit()
-    }
-
 
 }

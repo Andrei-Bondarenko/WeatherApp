@@ -1,11 +1,12 @@
-package com.example.weather.ui
+package com.example.weather.start_page.ui
 
 import android.util.Log
 import com.example.weather.common.mvp.BasePresenter
 import com.example.weather.interactor.WeatherInteractor
 
-class WeatherPresenter(private val interactor: WeatherInteractor) : WeatherContract.Presenter,
-    BasePresenter<WeatherContract.View>() {
+class DefaultPagePresenter(private val interactor: WeatherInteractor) : BasePresenter<DefaultPageContract.View>(),
+    DefaultPageContract.Presenter {
+
     override fun getData(key: String, city: String) {
         view?.showLoading(true)
         try {
@@ -17,8 +18,5 @@ class WeatherPresenter(private val interactor: WeatherInteractor) : WeatherContr
             Log.e("Get data error", t.message.toString())
         }
     }
-
-
-
 
 }
