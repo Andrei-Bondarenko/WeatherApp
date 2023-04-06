@@ -1,32 +1,23 @@
 package com.example.weather.ui
 
 import android.util.Log
+import com.example.weather.R
 import com.example.weather.interactor.WeatherInteractor
 
-class WeatherPresenter(private val interactor: WeatherInteractor) : Presenter {
-    private var view: View? = null
-
-    override fun attach(view: View) {
-        this.view = view
-    }
-
+class WeatherPresenter(private val interactor: WeatherInteractor) : WeatherContract.Presenter,BasePresenter<WeatherContract.View>() {
     override fun getData(key: String, city: String) {
+        view?.showLoading(true)
         try {
-            view?.showLoading(isLoading = true)
-            val weatherData = interactor.getWeatherData(city,key)
-            if (weatherData != null) view?.setContent(isVisible = true) else view?.setContent(isVisible = false)
+            val weatherData = interactor.getWeatherData(city, key)
+            if (weatherData != null) view?.setContent(true) else view?.setContent(false)
             view?.showData(weatherData)
-            view?.showLoading(isLoading = false)
-        }catch (t:Throwable){
-            Log.e("Get data error",t.message.toString())
-        }finally {
-            view?.showLoading(isLoading = false)
+            view?.showLoading(false)
+        } catch (t: Throwable) {
+            Log.e("Get data error", t.message.toString())
         }
     }
 
-    override fun detach() {
-        this.view = null
-    }
+
 
 
 }
