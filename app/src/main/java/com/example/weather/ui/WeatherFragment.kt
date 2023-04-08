@@ -57,7 +57,7 @@ class WeatherFragment :
                 }
             }
             buttonBackToMyCity.setOnClickListener {
-                replace(fragment = DefaultFragment(), R.id.container)
+                replace(fragment = DefaultFragment(), R.id.emptyContainer)
             }
         }
     }

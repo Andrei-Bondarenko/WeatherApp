@@ -4,10 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RootActivity">
+    tools:context="com.example.RootActivity">
 
     <FrameLayout
-        android:id="@+id/container"
+        android:id="@+id/emptyContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"

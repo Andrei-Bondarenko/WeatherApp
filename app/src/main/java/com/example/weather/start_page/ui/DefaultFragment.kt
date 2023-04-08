@@ -50,7 +50,7 @@ class DefaultFragment :
         presenter.getData(key.toString(), binding.myCityTextView.text.toString())
 
         binding.buttonShowOtherCity.setOnClickListener {
-            replace(fragment = WeatherFragment(), R.id.container)
+            replace(fragment = WeatherFragment(), R.id.emptyContainer)
         }
     }
 
