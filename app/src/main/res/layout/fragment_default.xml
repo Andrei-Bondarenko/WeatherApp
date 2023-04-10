@@ -85,7 +85,6 @@
         android:layout_width="130dp"
         android:layout_height="100dp"
         android:background="#66FFFFFF"
-
         android:layout_marginStart="5dp"
         android:layout_marginBottom="150dp"
         app:layout_constraintBottom_toBottomOf="parent"

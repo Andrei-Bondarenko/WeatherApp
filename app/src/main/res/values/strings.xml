@@ -18,4 +18,9 @@
     <string name="feelsLike">Ощущается как</string>
     <string name="back_to_my_city">back to my city</string>
     <string name="show_other_city">show other city</string>
+    <string name="evening">Evening</string>
+    <string name="morning">Morning</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="humidity">Humidity</string>
+    <string name="feels_like">Feels Like</string>
 </resources>
