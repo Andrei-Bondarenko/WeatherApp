@@ -3,6 +3,7 @@ package com.example.weather.start_page.ui
 import android.util.Log
 import com.example.weather.common.mvp.BasePresenter
 import com.example.weather.interactor.WeatherInteractor
+import timber.log.Timber
 
 class DefaultPagePresenter(private val interactor: WeatherInteractor) : BasePresenter<DefaultPageContract.View>(),
     DefaultPageContract.Presenter {
@@ -11,11 +12,13 @@ class DefaultPagePresenter(private val interactor: WeatherInteractor) : BasePres
         view?.showLoading(true)
         try {
             val weatherData = interactor.getWeatherData(city, key)
-            if (weatherData != null) view?.setContent(true) else view?.setContent(false)
-            view?.showData(weatherData)
+            view?.setContent(true)
             view?.showLoading(false)
+            view?.showData(weatherData)
         } catch (t: Throwable) {
-            Log.e("Get data error", t.message.toString())
+            Timber.e("Get data error ${t.message}")
+        } finally {
+            view?.showLoading(false)
         }
     }
 

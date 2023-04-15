@@ -5,7 +5,7 @@
     android:id="@+id/constraintContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/clearsky">
+    android:background="@drawable/clear_sky">
 
 
     <Button
@@ -21,6 +21,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/fiveDaysWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#008EFF"
+        android:text="@string/five_days_weather"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/windSpeedContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="40dp"/>
 
 
     <EditText

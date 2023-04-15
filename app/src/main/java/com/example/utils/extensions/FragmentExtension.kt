@@ -1,4 +1,4 @@
-package com.example.weather.utils
+package com.example.utils.extensions
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction

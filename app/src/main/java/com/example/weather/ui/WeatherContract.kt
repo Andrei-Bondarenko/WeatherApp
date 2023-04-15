@@ -9,8 +9,9 @@ interface WeatherContract {
         fun showLoading(isLoading: Boolean)
         fun setContent(isVisible: Boolean)
         fun showData(data: WeatherData)
+        fun changeBackgroundImage(data: WeatherData)
     }
     interface Presenter: MvpPresenter<View> {
-        fun getData(key: String, city: String)
+        fun getData(key: String, city: String, metric: String)
     }
 }

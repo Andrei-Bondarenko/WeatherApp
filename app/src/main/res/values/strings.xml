@@ -23,4 +23,6 @@
     <string name="wind_speed">Wind Speed</string>
     <string name="humidity">Humidity</string>
     <string name="feels_like">Feels Like</string>
+    <string name="celsius">celsius</string>
+    <string name="five_days_weather">Five days weather</string>
 </resources>
